@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#chat-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #0068c8, #64dd17);
+    color: white;
+    border: none;
+    /* padding: 16px 18px; */
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#chat-container {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 340px;
+    height: 450px;
+    background: white;
+    border-radius: 15px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+#chat-header {
+    background: linear-gradient(135deg, #00c853, #64dd17);
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+#chatbox {
+    flex: 1;
+    /* padding: 15px; */
+    overflow-y: auto;
+    background: #f9fdf9;
+}
+
+.message {
+    margin: 8px 0;
+    max-width: 85%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+.user {
+    color: rgb(6, 6, 6);
+    margin-left: auto;
+    text-align: right;
+}
+
+.bot {
+    background: #e8f5e9;
+    color: #333;
+    margin-right: auto;
+}
+#sendBtn {
+    font-size: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00c853, #64dd17);
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 3px;
+}
+
+#chat-input {
+    display: flex;
+    border-top: 1px solid #eee;
+}
+
+#userInput {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    outline: none;
+    font-size: 14px;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #555;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 8px;
+}
+
+.message.user .avatar {
+     background: linear-gradient(135deg, #00c853, #64dd17);
+}
+
+.message span {
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: #f1f1f1;
+}
+
+.message.user span {
+     background: linear-gradient(135deg, #00c853, #64dd17);
+    color: white;
+}

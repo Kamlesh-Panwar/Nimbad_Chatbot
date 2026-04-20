@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nimbad Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+<button id="chat-toggle">🤖</button>   
+
+<div id="chat-container">
+    <div id="chat-header">Nimbad Assistant</div>
+
+<div id="chatbox"></div>
+
+<div id="chat-input">
+    <input type="text" id="userInput" placeholder="Ask something..." />
+     <button id="sendBtn">➤</button>
+</div>
+</div>
+<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+
+</body>
+</html>
