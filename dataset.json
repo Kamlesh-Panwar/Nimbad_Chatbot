@@ -1,206 +1,297 @@
 [
- { 
-    "question": "hi", 
-    "answer": "Hello! Welcome to Nimbad Infotech Pvt Ltd. How can I assist you?" 
- },
- { 
-    "question": "hello", 
-    "answer": "Hi there! How can I help you with our services?" 
- },
- {
-    "question": "Good morning", 
-    "answer": "Good morning! How can I assist you ?"
- },
- { 
-    "question": "Good afternoon", 
-    "answer": "Good afternoon! How can I assist you ?"
- },
- { 
-    "question": "Good evening", 
-    "answer": "Good evening! How can I assist you ?"
- },
- { 
-    "question": "What is your company name?", 
-    "answer": "Our company name is Nimbad Infotech Pvt Ltd." 
- },
- { 
-    "question": "Where are you located / location / address?", 
-    "answer": "We are located in Indore, Madhya Pradesh, India." 
- },
+  {
+    "tag": "greeting",
+    "patterns": [
+      "hi", "hello", "hey", "hey there", "hello there",
+      "good morning", "good afternoon", "good evening",
+      "is anyone there", "can you hear me",
+      "hi chatbot", "hello bot", "hey assistant",
+      "yo", "hi buddy"
+    ],
+    "responses": [
+      "Hello! Welcome to Nimbad Infotech Pvt Ltd. How can I assist you?",
+      "Hi there! How can I help you today?"
+    ]
+  },
 
- { 
-    "question": "What services do you offer?", 
-    "answer": "We offer IT Consultancy & Strategy, Software Development, and Recruitment Solutions." 
- },
- {
-    "question": "What jobs do you have available?", 
-    "answer": "We have job openings for software developers, IT consultants, and recruitment specialists. Please visit our careers page for more details."
- },
- { 
-    "question": "Can you explain your services?", 
-    "answer": "Sure! We provide IT consulting, custom software development, and recruitment services for IT professionals." 
- },
+  {
+    "tag": "company_info",
+    "patterns": [
+      "what is your company name", "who are you",
+      "tell me about your company", "company details",
+      "company information", "about your company",
+      "introduce your company", "business details",
+      "where are you located", "your location",
+      "company address", "office location",
+      "where is your office", "where is your company",
+      "which city are you in"
+    ],
+    "responses": [
+      "We are Nimbad Infotech Pvt Ltd, located in Indore, Madhya Pradesh, India."
+    ]
+  },
 
- { 
-    "question": "Do you provide IT consulting?", 
-    "answer": "Yes, we provide IT consultancy and strategic planning to help businesses grow digitally." 
- },
- { 
-    "question": "How can IT consulting help my business?", 
-    "answer": "IT consulting can improve efficiency, reduce costs, and help you adopt the right technologies." 
- },
- { 
-    "question": "Do you help with digital transformation?",
-    "answer": "Yes, we help businesses transform digitally by adopting modern technologies and strategies." 
- },
- { 
-    "question": "What is your software development service?", 
-    "answer": "We build web, mobile, and enterprise applications tailored to your business needs." 
- },
- { 
-    "question": "What technologies do you use?",
-    "answer": "We work with technologies like JavaScript, Angular, React, .NET, Java, Python, and cloud platforms." 
- },
- { 
-    "question": "Do you build websites?", 
-    "answer": "Yes, we design and develop modern, responsive websites."
- },
- { 
-    "question": "Do you develop mobile apps?", 
-    "answer": "Yes, we develop Android and iOS mobile applications."
- },
- { 
-    "question": "Do you provide custom software?", 
-    "answer": "Yes, we build fully customized software solutions based on your requirements."
- },
- { 
-    "question": "Can you upgrade existing software?", 
-    "answer": "Yes, we can modernize and upgrade your existing systems."
- },
- { 
-    "question": "Do you provide maintenance support?", 
-    "answer": "Yes, we offer ongoing support and maintenance services." 
- },
- { 
-    "question": "Do you provide enterprise solutions?", 
-    "answer": "Yes, we build scalable enterprise-grade applications." 
- },
+  {
+    "tag": "services",
+    "patterns": [
+      "what services do you offer", "your services",
+      "what do you do", "list your services",
+      "service list", "what solutions do you provide",
+      "explain your services", "service details",
+      "business services", "what can you do",
+      "tell me your services", "what work do you do"
+    ],
+    "responses": [
+      "We offer IT Consultancy, Software Development, and Recruitment Solutions."
+    ]
+  },
 
- { 
-    "question": "Do you provide recruitment services?", 
-    "answer": "Yes, we provide recruitment solutions to help companies hire skilled IT professionals." 
- },
- { 
-    "question": "What is your recruitment process?", 
-    "answer": "We screen, shortlist, and provide qualified candidates based on your requirements." 
- },
- { 
-    "question": "Do you provide contract hiring?", 
-    "answer": "Yes, we offer both permanent and contract-based hiring solutions." 
- },
- { 
-    "question": "Can you help hire developers?", 
-    "answer": "Yes, we specialize in hiring skilled developers across various technologies." 
- },
- { 
-    "question": "Do you provide remote developers?", 
-    "answer": "Yes, we provide remote developers on contract for global clients." 
- },
+  {
+    "tag": "software_dev",
+    "patterns": [
+      "do you build websites", "website development",
+      "do you create mobile apps", "android app development",
+      "ios app development", "custom software development",
+      "enterprise applications", "web applications",
+      "software solutions", "can you build my app",
+      "can you create software", "build web app",
+      "mobile app services", "full stack development",
+      "do you develop apps"
+    ],
+    "responses": [
+      "Yes, we develop websites, mobile apps, and custom enterprise software tailored to your needs."
+    ]
+  },
 
- { 
-    "question": "How can I contact you?", 
-    "answer": "You can contact us via email or through our website contact form." 
- },
- { 
-    "question": "Do you have a website?", 
-    "answer": "Yes, please visit our website for more details about our services." 
- },
- { 
-    "question": "How quickly can you respond?", 
-    "answer": "We usually respond within 24 hours." 
-     },
+  {
+    "tag": "technologies",
+    "patterns": [
+      "what technologies do you use", "tech stack",
+      "which programming languages", "tools you use",
+      "frameworks you use", "backend technologies",
+      "frontend technologies", "cloud platforms",
+      "do you use react", "do you use angular",
+      "do you use python", "do you use java",
+      "what is your tech stack", "technology expertise"
+    ],
+    "responses": [
+      "We use JavaScript, Angular, React, .NET, Java, Python, and cloud platforms like Azure."
+    ]
+  },
 
- { 
-    "question": "Do you work with startups?", 
-    "answer": "Yes, we work with startups and help them build scalable solutions." 
- },
- { 
-    "question": "Do you work with large enterprises?", 
-    "answer": "Yes, we also work with large enterprises on complex projects." 
- },
- { 
-    "question": "Do you offer affordable services?", 
-    "answer": "Yes, we provide cost-effective solutions tailored to your budget." 
- },
+  {
+    "tag": "it_consulting",
+    "patterns": [
+      "do you provide IT consulting", "consulting services",
+      "IT consultancy services", "technology consulting",
+      "business IT strategy", "digital transformation help",
+      "how IT consulting helps", "consulting support",
+      "business growth consulting", "can you guide my business",
+      "do you provide strategy"
+    ],
+    "responses": [
+      "Yes, we provide IT consulting and strategic solutions to help businesses grow digitally."
+    ]
+  },
 
- { 
-    "question": "Do you provide cloud solutions?", 
-    "answer": "Yes, we offer cloud-based development and deployment services." 
- },
- { 
-    "question": "Do you work on AI projects?", 
-    "answer": "Yes, we also work on AI and machine learning-based solutions." 
- },
- { 
-    "question": "Do you provide chatbot development?", 
-    "answer": "Yes, we develop AI-based chatbots for businesses." 
- },
+  {
+    "tag": "maintenance",
+    "patterns": [
+      "do you provide maintenance", "support services",
+      "after project support", "software maintenance",
+      "ongoing support", "bug fixing support",
+      "system maintenance", "update services",
+      "do you fix bugs", "post deployment support"
+    ],
+    "responses": [
+      "Yes, we provide ongoing support, maintenance, and updates after project delivery."
+    ]
+  },
 
- { 
-    "question": "What makes your company different?", 
-    "answer": "We focus on quality, innovation, and customer satisfaction." 
- },
- { 
-    "question": "Why should I choose your company?", 
-    "answer": "We provide reliable, scalable, and cost-effective IT solutions."
- },
+  {
+    "tag": "recruitment",
+    "patterns": [
+      "do you provide recruitment services", "hire developers",
+      "IT hiring services", "recruitment solutions",
+      "job hiring help", "provide developers",
+      "remote developers", "contract hiring",
+      "staff augmentation", "hire IT professionals",
+      "developer hiring services", "outsourcing developers"
+    ],
+    "responses": [
+      "Yes, we provide recruitment services and help companies hire skilled IT professionals."
+    ]
+  },
 
- { 
-    "question": "Do you sign NDA?", 
-    "answer": "Yes, we ensure confidentiality by signing NDA agreements." 
- },
- { 
-    "question": "How do you ensure quality?", 
-    "answer": "We follow best practices, testing, and quality assurance processes." 
- },
+  {
+    "tag": "jobs",
+    "patterns": [
+      "job openings", "careers", "vacancies",
+      "are you hiring", "jobs in your company",
+      "open positions", "apply for job",
+      "career opportunities", "job roles",
+      "job vacancies", "work with you",
+      "join your company"
+    ],
+    "responses": [
+      "We have openings for developers, IT consultants, and recruiters. Please check our careers page."
+    ]
+  },
 
- { 
-    "question": "Can you handle large projects?", 
-    "answer": "Yes, we have the capability to handle projects of all sizes." 
- },
- { 
-    "question": "Do you provide project management?", 
-    "answer": "Yes, we offer end-to-end project management services." 
- },
+  {
+    "tag": "projects",
+    "patterns": [
+      "your projects", "past projects", "portfolio",
+      "what have you built", "example projects",
+      "show your work", "completed projects",
+      "project list", "case studies",
+      "previous work", "your portfolio",
+      "tell me your projects"
+    ],
+    "responses": [
+      "We have worked on projects like Digital Admin, UCCPlus, and Plus Digital using modern technologies."
+    ]
+  },
 
- { 
-    "question": "What is your development process?", 
-    "answer": "We follow agile methodology for efficient and flexible development." 
- },
- { 
-    "question": "Do you provide UI/UX design?", 
-    "answer": "Yes, we design user-friendly and attractive interfaces." 
- },
+  {
+    "tag": "project_comparison",
+    "patterns": [
+      "which project uses angular",
+      "which project uses azure",
+      "compare your projects",
+      "difference between your projects",
+      "which project uses azure functions",
+      "compare digital admin and uccplus",
+      "which project uses cloud",
+      "project technology comparison"
+    ],
+    "responses": [
+      "UCCPlus uses Angular, while Plus Digital uses Azure Functions and cloud services."
+    ]
+  },
 
- { 
-    "question": "Can I get a demo?", 
-    "answer": "Yes, we can provide demos of our previous work."
- },
- { 
-    "question": "Do you offer consultation before starting?", 
-    "answer": "Yes, we offer initial consultation to understand your requirements."
- },
+  {
+    "tag": "pricing",
+    "patterns": [
+      "how much does it cost", "pricing",
+      "service cost", "project cost",
+      "development charges", "budget estimate",
+      "how expensive are you", "price details",
+      "cost for website", "cost for app",
+      "software price", "estimate cost"
+    ],
+    "responses": [
+      "Our pricing depends on your project requirements. We offer cost-effective and flexible solutions."
+    ]
+  },
 
- { 
-    "question": "How do I start a project with you?", 
-    "answer": "You can contact us and share your requirements to get started."
- },
- { 
-    "question": "Do you provide ongoing support?", 
-    "answer": "Yes, we provide continuous support even after project delivery."
- },
- {
-    "question": "Which projects do you have completed?", 
-    "answer": "We have completed various projects like Digital Admin {Developed a robust and scalable web application using .NET Core 8, deployed on Microsoft Azure, with SQL Server as the backend database. The application follows modern architecture practices and provides secure, high-performance data processing with cloud hosting and monitoring.}UCCPlus {Developed a full-stack web application using Angular for the frontend and ASP.NET Core for the backend, hosted on Microsoft Azure, with SQL Server as the primary database. The application delivers a responsive user interface, secure RESTful APIs, and scalable cloud infrastructure to support high performance and reliability.}Plus Digital{Developed a scalable and secure cloud-based application using ASP.NET Core as the backend, hosted on Microsoft Azure. The solution uses Azure Functions for serverless and background processing, Azure Key Vault for secure secrets management, Redis for high-performance caching, SQL Server for relational data storage, and Azure DevOps for CI/CD automation. The system is designed for high availability, performance, and enterprise-grade security}across different industries."
- }
+  {
+    "tag": "startup",
+    "patterns": [
+      "do you work with startups", "startup support",
+      "small business solutions", "new business help",
+      "can you help my startup", "startup development",
+      "startup software", "startup IT support",
+      "early stage business help"
+    ],
+    "responses": [
+      "Yes, we work with startups and help them build scalable and cost-effective solutions."
+    ]
+  },
+
+  {
+    "tag": "enterprise",
+    "patterns": [
+      "large projects", "enterprise solutions",
+      "big company projects", "scalable systems",
+      "high traffic applications", "enterprise software",
+      "large scale systems", "corporate solutions",
+      "big applications"
+    ],
+    "responses": [
+      "Yes, we build enterprise-grade scalable applications for large organizations."
+    ]
+  },
+
+  {
+    "tag": "security",
+    "patterns": [
+      "do you sign nda", "data security",
+      "confidentiality", "is my data safe",
+      "security practices", "privacy policy",
+      "secure systems", "data protection",
+      "how secure is your system"
+    ],
+    "responses": [
+      "Yes, we ensure confidentiality and sign NDA agreements. We follow strict security practices."
+    ]
+  },
+
+  {
+    "tag": "process",
+    "patterns": [
+      "development process", "how you work",
+      "project workflow", "agile methodology",
+      "software process", "development steps",
+      "how do you develop software",
+      "project lifecycle", "work process"
+    ],
+    "responses": [
+      "We follow agile methodology for efficient, flexible, and high-quality development."
+    ]
+  },
+
+  {
+    "tag": "uiux",
+    "patterns": [
+      "ui ux design", "design services",
+      "user interface design", "user experience",
+      "do you design apps", "app design",
+      "website design", "ux services",
+      "ui services"
+    ],
+    "responses": [
+      "Yes, we design modern, user-friendly, and attractive UI/UX interfaces."
+    ]
+  },
+
+  {
+    "tag": "demo",
+    "patterns": [
+      "can i see demo", "show demo",
+      "sample work", "demo project",
+      "example application", "demo software",
+      "show example", "live demo"
+    ],
+    "responses": [
+      "Yes, we can provide demos and examples of our previous work."
+    ]
+  },
+
+  {
+    "tag": "contact",
+    "patterns": [
+      "how can i contact you", "contact details",
+      "email address", "phone number",
+      "reach you", "get in touch",
+      "contact info", "how to connect",
+      "support contact"
+    ],
+    "responses": [
+      "You can contact us via email or through our website contact form. We usually respond within 24 hours."
+    ]
+  },
+
+  {
+    "tag": "goodbye",
+    "patterns": [
+      "bye", "goodbye", "see you",
+      "talk later", "thanks bye",
+      "exit", "quit", "see you later",
+      "catch you later","ok"
+    ],
+    "responses": [
+      "Thank you for contacting us! Have a great day"
+    ]
+  }
 ]
