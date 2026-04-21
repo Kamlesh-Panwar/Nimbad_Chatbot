@@ -1,6 +1,16 @@
 document.getElementById("chat-toggle").onclick = function () {
     let chat = document.getElementById("chat-container");
-    chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+
+    let isOpen = chat.style.display === "flex";
+    chat.style.display = isOpen ? "none" : "flex";
+
+    if (!isOpen) {
+        showSuggestions([
+            "What services do you offer?",
+            "Do you build websites?",
+            "How can I contact you?"
+        ]);
+    }
 };
 document.getElementById("sendBtn").onclick = sendMessage;
 document.getElementById("userInput").addEventListener("keypress", function(e) {
@@ -9,15 +19,75 @@ document.getElementById("userInput").addEventListener("keypress", function(e) {
     }
 });
 
-function sendMessage() {
+window.onload = function() {
+    setTimeout(function() {
+        document.getElementById("help-prompt").style.display = "block";
+    },1000);
+};
+document.getElementById("close-chat").onclick = function() {
+    document.getElementById("help-prompt").style.display = "none";
+};
+document.getElementById("close-chat-btn").onclick = function () {
+    document.getElementById("chat-container").style.display = "none";
+};
+
+document.getElementById("open-chat").onclick = function(e) {
+    e.stopPropagation();
+
+    document.getElementById("help-prompt").style.display = "none";
+    document.getElementById("chat-container").style.display = "flex";
+    showSuggestions([
+        "What services do you offer?",
+        "Do you build websites?",
+        "How can I contact you?"
+    ]);
+};
+
+document.addEventListener("click", function (event) {
+    let chat = document.getElementById("chat-container");
+    let toggle = document.getElementById("chat-toggle");
+    let openBtn = document.getElementById("open-chat");
+
+    if (
+        !chat.contains(event.target) &&
+        !toggle.contains(event.target) &&
+        !openBtn.contains(event.target)
+    ) {
+        chat.style.display = "none";
+        document.getElementById("help-prompt").style.display = "none";
+    }
+});
+function showSuggestions(suggestions) {
+    let container = document.getElementById("suggestions");
+    container.innerHTML = "";
+
+    if (!suggestions || suggestions.length === 0) {
+        container.style.display = "none";
+        return;
+    }
+
+    suggestions.forEach(text => {
+        let btn = document.createElement("button");
+        btn.innerText = text;
+        btn.className = "suggest-btn";
+
+        btn.onclick = function () {
+            sendMessage(text);
+        };
+
+        container.appendChild(btn);
+    });
+
+    container.style.display = "flex";
+}
+function sendMessage(customMessage = null) {
     let inputField = document.getElementById("userInput");
-    let message = inputField.value.trim();
+    let message = customMessage || inputField.value.trim();
 
     if (message === "") return;
 
     let chatbox = document.getElementById("chatbox");
 
-    // USER MESSAGE (hardcoded avatar)
     chatbox.innerHTML += `
     <div class="message user">
         <div class="avatar">👤</div>
@@ -33,12 +103,20 @@ function sendMessage() {
     })
     .then(res => res.json())
     .then(data => {
+        console.log("API Response:", data);
+
         chatbox.innerHTML += `
         <div class="message bot">
             <span>${data.response}</span>
         </div>`;
 
         chatbox.scrollTop = chatbox.scrollHeight;
+
+        if (data.suggestions && data.suggestions.length > 0) {
+            showSuggestions(data.suggestions);
+        } else {
+            showSuggestions([]);
+        }
     });
 
     inputField.value = "";

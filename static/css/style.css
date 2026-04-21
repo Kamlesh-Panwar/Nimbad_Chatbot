@@ -14,11 +14,24 @@ body {
     cursor: pointer;
     font-size: 40px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 #chat-container {
     position: fixed;
-    bottom: 90px;
+    bottom: 20px;
     right: 20px;
     width: 340px;
     height: 450px;
@@ -36,11 +49,9 @@ body {
     padding: 15px;
     font-weight: bold;
     font-size: 16px;
-    text-align: center;
 }
 #chatbox {
     flex: 1;
-    /* padding: 15px; */
     overflow-y: auto;
     background: #f9fdf9;
 }
@@ -126,5 +137,80 @@ body {
 
 .message.user span {
      background: linear-gradient(135deg, #00c853, #64dd17);
+    color: white;
+}
+.bot-message {
+    background: #f1f1f1;
+    margin: 7px 9px;
+    max-width: 85%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+#help-prompt {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border: 1px lightblue solid;
+    z-index: 9999;
+}
+#help-prompt button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+#open-chat {
+    background: linear-gradient(135deg, #00c853, #64dd17);
+    color: white;
+}
+#close-chat {
+    background: linear-gradient(135deg, #c62828, #ff1744);
+    color: white;
+}
+ #close-chat-btn {
+    color: white;
+    position: absolute;
+    font-size: 20px;
+    top: 15px;
+    right: 10px;
+    font-weight: lighter;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.2s ease; 
+}
+
+#close-chat-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+#suggestions {
+    display: none;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px;
+}
+
+.suggest-btn {
+    background: #f1f1f1;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.suggest-btn:hover {
+    background: #007bff;
     color: white;
 }
