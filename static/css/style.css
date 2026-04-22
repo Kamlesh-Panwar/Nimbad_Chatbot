@@ -194,6 +194,21 @@ body {
     opacity: 1;
     transform: scale(1.1);
 }
+#new-tab-btn {
+    color: white;
+    position: absolute;
+    font-size: 20px;
+    top: 15px;
+    right: 33px;
+    font-weight: lighter;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+#new-tab-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
 #suggestions {
     display: none;
     flex-wrap: wrap;

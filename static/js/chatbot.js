@@ -4,12 +4,19 @@ document.getElementById("chat-toggle").onclick = function () {
     let isOpen = chat.style.display === "flex";
     chat.style.display = isOpen ? "none" : "flex";
 
-    if (!isOpen) {
+    if (isOpen) {
         showSuggestions([
             "What services do you offer?",
             "Do you build websites?",
             "How can I contact you?"
         ]);
+    }
+    else{
+       showSuggestions([
+            "What services do you offer?",
+            "Do you build websites?",
+            "How can I contact you?"
+        ]); 
     }
 };
 document.getElementById("sendBtn").onclick = sendMessage;
@@ -120,4 +127,16 @@ function sendMessage(customMessage = null) {
     });
 
     inputField.value = "";
+}
+
+document.getElementById("new-tab-btn").onclick = function(e) {
+    e.stopPropagation();
+    let chatbox = document.getElementById("chatbox");
+    chatbox.innerHTML = `
+        <div class="bot-message">👋 Hi there! I'm Nimbad assistant. How can I help you today?</div>`;
+    showSuggestions([
+        "What services do you offer?",
+        "Do you build websites?",
+        "How can I contact you?"
+    ]);
 }
