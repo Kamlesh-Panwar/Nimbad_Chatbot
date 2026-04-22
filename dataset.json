@@ -17,7 +17,7 @@
   {
     "tag": "company_info",
     "patterns": [
-      "what is your company name", "who are you",
+      "what is your company name",
       "tell me about your company", "company details",
       "company information", "about your company",
       "introduce your company", "business details",
@@ -175,8 +175,7 @@
     "patterns": [
       "how much does it cost", "pricing",
       "service cost", "project cost",
-      "development charges", "budget estimate",
-      "how expensive are you", "price details",
+      "development charges", "budget estimate","price details",
       "cost for website", "cost for app",
       "software price", "estimate cost"
     ],
