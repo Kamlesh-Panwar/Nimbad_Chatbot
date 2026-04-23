@@ -1,6 +1,5 @@
 import json
 import random
-import re
 from flask.cli import load_dotenv
 from rank_bm25 import BM25Okapi
 import requests
@@ -36,7 +35,6 @@ class ChatbotModel:
 
     def clean_text(self, text):
         text = text.lower()
-        text = re.sub(r'[^\w\s]', '', text)
         return text.strip()
 
 
@@ -68,7 +66,7 @@ class ChatbotModel:
         if len(suggestions) < top_n:
             remaining = list(set(self.patterns) - set(suggestions))
             random.shuffle(remaining)
-
+            
             for q in remaining:
                 if q not in suggestions and q not in self.last_suggestions:
                     suggestions.append(q)
@@ -79,12 +77,6 @@ class ChatbotModel:
         return suggestions
 
     def get_response(self, user_input):
-        if not user_input or not user_input.strip():
-            return {
-                "response": "Please enter a message.",
-                "suggestions": ["services", "pricing", "contact"]
-            }
-
         cleaned_input = self.clean_text(user_input)
         tokenized_query = cleaned_input.split()
 
@@ -107,23 +99,23 @@ class ChatbotModel:
                 "suggestions": auto_suggestions
             }
 
-        # tag = self.tags[best_idx]
         response = random.choice(self.responses[best_idx])
-
-        # dataset_suggestions = self.suggestions_map.get(tag) or []
 
         patterns_suggestions = self.get_unique_suggestions()
 
-        # final_suggestions = list(dict.fromkeys(dataset_suggestions + auto_suggestions))[:3]
-
         return {
             "response": response,
-            # "suggestions": final_suggestions
             "suggestions": patterns_suggestions
         }
     def get_unique_suggestions(self, count=3):
+
+        pattern_tag_pairs = list(zip(self.patterns, self.tags))
+        filtered = [
+            p for p, t in pattern_tag_pairs
+            if t.lower() not in ["greeting", "goodbye"]
+        ]
     
-        available = [p for p in self.patterns if p not in self.used_patterns]
+        available = [p for p in filtered if p not in self.used_patterns]
 
         if len(available) == 0:
             self.used_patterns.clear()

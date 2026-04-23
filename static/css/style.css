@@ -9,7 +9,6 @@ body {
     background: linear-gradient(135deg, #0068c8, #64dd17);
     color: white;
     border: none;
-    /* padding: 16px 18px; */
     border-radius: 50%;
     cursor: pointer;
     font-size: 40px;
@@ -44,11 +43,17 @@ body {
 }
 
 #chat-header {
-    background: linear-gradient(135deg, #00c853, #64dd17);
+    background: linear-gradient(135deg, #10a37f, #0d8f6a);
     color: white;
-    padding: 15px;
-    font-weight: bold;
-    font-size: 16px;
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 #chatbox {
     flex: 1;
@@ -58,8 +63,8 @@ body {
 
 .message {
     margin: 8px 0;
-    max-width: 85%;
-    padding: 10px;
+    max-width: 90%;
+    padding: 2px;
     border-radius: 10px;
     font-size: 14px;
     flex-wrap: wrap;
@@ -72,7 +77,6 @@ body {
 }
 
 .bot {
-    background: #e8f5e9;
     color: #333;
     margin-right: auto;
 }
@@ -81,17 +85,22 @@ body {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #00c853, #64dd17);
     color: white;
     border: none;
     cursor: pointer;
     text-align: center;
     margin-top: 3px;
+    background: linear-gradient(135deg, #10a37f, #0d8f6a);
 }
 
 #chat-input {
     display: flex;
-    border-top: 1px solid #eee;
+    align-items: center;
+    padding: 2px;
+    border: 1px solid;
+   background: #fff;
+   border-radius: 12px;
+   margin: 10px; 
 }
 
 #userInput {
@@ -103,9 +112,9 @@ body {
 }
 
 .message {
+    margin: 10px 0;
     display: flex;
-    align-items: center;
-    margin: 8px;
+    align-items: flex-start;
 }
 
 .message.user {
@@ -122,31 +131,40 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    margin: 0 8px;
+    /* margin: 0 8px; */
 }
 
 .message.user .avatar {
-     background: linear-gradient(135deg, #00c853, #64dd17);
+    background: linear-gradient(135deg, #05c80040, #11bc1d00);
+    color: #050505;
 }
 
 .message span {
     padding: 8px 12px;
     border-radius: 10px;
-    background: #f1f1f1;
+    background: linear-gradient(135deg, #05c80040, #11bc1d00);
+    color: #050505;
+    border-radius: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    line-height: 1.4;
+    margin-left: 10px;
 }
 
 .message.user span {
-     background: linear-gradient(135deg, #00c853, #64dd17);
-    color: white;
+    border-radius: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    line-height: 1.4;
 }
 .bot-message {
-    background: #f1f1f1;
-    margin: 7px 9px;
+   background: linear-gradient(135deg, #10a37f, #0d8f6a); /* soft gradient */
+    margin: 8px 12px;
     max-width: 85%;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 12px 14px;
+    border-radius: 18px; /* smoother rounded corners */
     font-size: 14px;
-    flex-wrap: wrap;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* subtle shadow */
+    line-height: 1.4;
 }
 #help-prompt {
     position: fixed;
@@ -214,18 +232,47 @@ body {
     flex-wrap: wrap;
     gap: 6px;
     padding: 10px;
+    margin-bottom: -13px;
 }
 
 .suggest-btn {
-    background: #f1f1f1;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 15px;
+    background: #e8f5e9;   
+    color: #2e7d32;  
+    border: 1px solid #c8e6c9;
+    border-radius: 20px;
+    padding: 4px 6px;
     cursor: pointer;
-    font-size: 12px;
+    transition: 0.3s;
 }
 
 .suggest-btn:hover {
-    background: #007bff;
+    background: linear-gradient(135deg, #10a37f, #0d8f6a);
     color: white;
+}
+.typing {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+}
+
+.typing span {
+    width: 8px;
+    height: 8px;
+    background: #555;
+    border-radius: 50%;
+    animation: blink 1.4s infinite;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0% { opacity: 0.2; }
+    20% { opacity: 1; }
+    100% { opacity: 0.2; }
 }

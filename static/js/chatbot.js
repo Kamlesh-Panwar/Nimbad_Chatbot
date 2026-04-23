@@ -19,7 +19,10 @@ document.getElementById("chat-toggle").onclick = function () {
         ]); 
     }
 };
-document.getElementById("sendBtn").onclick = sendMessage;
+document.getElementById("sendBtn").onclick = function(e) {
+    e.preventDefault();
+    sendMessage();
+};
 document.getElementById("userInput").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
         sendMessage();
@@ -93,7 +96,7 @@ function sendMessage(customMessage = null) {
 
     const loader = document.getElementById("loader"); // loader element
 
-    if (message === "") return;
+    if (!message) return;
 
     let chatbox = document.getElementById("chatbox");
 
