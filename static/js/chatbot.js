@@ -91,6 +91,8 @@ function sendMessage(customMessage = null) {
     let inputField = document.getElementById("userInput");
     let message = customMessage || inputField.value.trim();
 
+    const loader = document.getElementById("loader"); // loader element
+
     if (message === "") return;
 
     let chatbox = document.getElementById("chatbox");
@@ -100,6 +102,8 @@ function sendMessage(customMessage = null) {
         <div class="avatar">👤</div>
         <span>${message}</span>
     </div>`;
+
+    loader.style.display = "block"; // show loader
 
     fetch("/chat", {
         method: "POST",
@@ -111,6 +115,7 @@ function sendMessage(customMessage = null) {
     .then(res => res.json())
     .then(data => {
         console.log("API Response:", data);
+        loader.style.display = "none"; // hide loader
 
         chatbox.innerHTML += `
         <div class="message bot">

@@ -5,7 +5,7 @@ from flask.cli import load_dotenv
 from rank_bm25 import BM25Okapi
 import requests
 import os
-
+import random
 class ChatbotModel:
     def __init__(self, json_path):
         with open(json_path, 'r') as f:
@@ -15,6 +15,7 @@ class ChatbotModel:
         self.responses = []
         self.tags = []
         self.suggestions_map = {}
+        self.used_patterns = set()
         self.last_suggestions = []
 
         for item in data:
@@ -106,17 +107,34 @@ class ChatbotModel:
                 "suggestions": auto_suggestions
             }
 
-        tag = self.tags[best_idx]
+        # tag = self.tags[best_idx]
         response = random.choice(self.responses[best_idx])
 
-        dataset_suggestions = self.suggestions_map.get(tag) or []
+        # dataset_suggestions = self.suggestions_map.get(tag) or []
 
-        final_suggestions = list(dict.fromkeys(dataset_suggestions + auto_suggestions))[:3]
+        patterns_suggestions = self.get_unique_suggestions()
+
+        # final_suggestions = list(dict.fromkeys(dataset_suggestions + auto_suggestions))[:3]
 
         return {
             "response": response,
-            "suggestions": final_suggestions
+            # "suggestions": final_suggestions
+            "suggestions": patterns_suggestions
         }
+    def get_unique_suggestions(self, count=3):
+    
+        available = [p for p in self.patterns if p not in self.used_patterns]
+
+        if len(available) == 0:
+            self.used_patterns.clear()
+            available = self.patterns.copy()
+
+        selected = random.sample(available, min(count, len(available)))
+
+        for s in selected:
+            self.used_patterns.add(s)
+
+        return selected
     
 def get_ollama_response(prompt):
     try:
@@ -124,6 +142,7 @@ def get_ollama_response(prompt):
             os.getenv("AI_API_URL"),
             json={
                 "model": "mistral",
+                # "model": "phi",
                 "prompt": prompt,
                 "stream": False
             }
