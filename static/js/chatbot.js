@@ -123,7 +123,7 @@ function sendMessage(customMessage = null) {
 
         chatbox.innerHTML += `
         <div class="message bot">
-            <span>${data.response}</span>
+            <span>${data.response.replace(/\n/g, '<br>')}</span>
         </div>`;
 
         chatbox.scrollTop = chatbox.scrollHeight;

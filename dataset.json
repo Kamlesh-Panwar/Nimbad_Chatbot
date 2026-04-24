@@ -67,18 +67,276 @@
     "tag": "technologies",
     "patterns": [
       "what technologies do you use?", "tech stack?",
-      "which programming languages?", "tools you use?",
-      "frameworks you use?", "backend technologies?",
-      "frontend technologies?", "cloud platforms?",
-      "do you use react?", "do you use angular?",
-      "do you use python?", "do you use java?",
-      "what is your tech stack?", "technology expertise?"
+      "which programming languages?"
     ],
     "responses": [
       "We use JavaScript, Angular, React, .NET, Java, Python, and cloud platforms like Azure."
     ]
   },
-
+  {
+  "tag": "frontend_technologies",
+  "patterns": [
+    "frontend technologies?",
+    "what frontend do you use?",
+    "do you use react?",
+    "do you use angular?",
+    "frontend stack?",
+    "ui technologies?"
+  ],
+  "responses": [
+    "We use modern frontend technologies like React, Angular, HTML5, CSS3, and JavaScript to build responsive and user-friendly interfaces."
+  ]
+  },
+  {
+  "tag": "backend_technologies",
+  "patterns": [
+    "backend technologies?",
+    "server side technologies?",
+    "what backend do you use?",
+    "do you use java?",
+    "do you use python?",
+    "backend stack?"
+  ],
+  "responses": [
+    "Our backend technologies include .NET, Java, Python, and Node.js for building secure and scalable server-side applications."
+  ]
+ },
+ {
+  "tag": "frameworks",
+  "patterns": [
+    "which frameworks do you use?",
+    "frameworks you use?",
+    "technology frameworks?",
+    "what frameworks do you work with?"
+  ],
+  "responses": [
+    "We work with powerful frameworks like Angular, React, Spring Boot, and .NET Core to ensure efficient and scalable development."
+  ]
+},
+{
+  "tag": "tools",
+  "patterns": [
+    "what tools do you use?",
+    "development tools?",
+    "software tools?",
+    "which tools are used?"
+  ],
+  "responses": [
+    "We use tools like Git, Docker, Jenkins, VS Code, and Postman to streamline development, testing, and deployment processes."
+  ]
+  },
+  {
+  "tag": "cloud_platforms",
+  "patterns": [
+    "cloud platforms?",
+    "do you use cloud?",
+    "which cloud services?",
+    "azure or aws?",
+    "cloud technologies?"
+  ],
+  "responses": [
+    "We use cloud platforms like Microsoft Azure and AWS to build scalable, secure, and high-performance applications."
+  ]
+  },
+  {
+  "tag": "tech_stack",
+  "patterns": [
+    "what technologies do you use?",
+    "tech stack?",
+    "technology expertise?",
+    "what is your tech stack?"
+  ],
+  "responses": [
+    "Our tech stack includes frontend (React, Angular), backend (.NET, Java, Python), cloud (Azure, AWS), and tools like Docker and Git."
+  ]
+ },
+ {
+  "tag": "react",
+  "patterns": [
+    "do you use react?",
+    "react js?",
+    "do you work with react?",
+    "react technology?"
+  ],
+  "responses": [
+    "Yes, we use React to build fast, scalable, and interactive user interfaces for modern web applications."
+  ]
+ },
+ {
+  "tag": "angular",
+  "patterns": [
+    "do you use angular?",
+    "angular framework?",
+    "angular development?",
+    "do you work with angular?"
+  ],
+  "responses": [
+    "Yes, we use Angular for building robust, enterprise-level frontend applications with strong architecture."
+  ]
+ },
+ {
+  "tag": "python",
+  "patterns": [
+    "do you use python?",
+    "python development?",
+    "python backend?",
+    "do you work with python?"
+  ],
+  "responses": [
+    "Yes, we use Python for backend development, automation, and building scalable APIs and data-driven applications."
+  ]
+  },
+  {
+  "tag": "java",
+  "patterns": [
+    "do you use java?",
+    "java backend?",
+    "java development?",
+    "do you work with java?"
+  ],
+  "responses": [
+    "Yes, we use Java for building secure, high-performance, and enterprise-grade backend systems."
+  ]
+ },
+ {
+  "tag": "javascript",
+  "patterns": [
+    "javascript?",
+    "do you use javascript?",
+    "js?",
+    "frontend javascript?",
+    "backend javascript?",
+    "javascript development?",
+    "do you work with js?"
+  ],
+  "responses": [
+    "Yes, we use JavaScript extensively for both frontend and backend development. It helps us build dynamic, interactive user interfaces as well as scalable server-side applications using technologies like Node.js."
+  ]
+  },
+ {
+  "tag": "dotnet",
+  "patterns": [
+    "do you use .net?",
+    "dot net?",
+    "do you work with .net?",
+    ".net framework?",
+    ".net core?",
+    "asp.net?",
+    "backend in .net?"
+  ],
+  "responses": [
+    "Yes, we use .NET technologies such as ASP.NET and .NET Core to build secure, scalable, and high-performance web and enterprise applications."
+  ]
+ },
+ {
+  "tag": "csharp",
+  "patterns": [
+    "do you use c#?",
+    "c sharp?",
+    "c# development?",
+    "do you code in c#?",
+    "c# language?"
+  ],
+  "responses": [
+    "Yes, we use C# as a primary programming language for developing robust backend systems, APIs, and enterprise applications using the .NET ecosystem."
+  ]
+ },
+ {
+  "tag": "aspnet",
+  "patterns": [
+    "do you use asp.net?",
+    "asp net development?",
+    "web development in asp.net?",
+    "asp.net core?"
+  ],
+  "responses": [
+    "Yes, we use ASP.NET and ASP.NET Core for building modern, secure, and scalable web applications and RESTful APIs."
+  ]
+ },
+ {
+  "tag": "nodejs",
+  "patterns": [
+    "do you use node?",
+    "node js?",
+    "node backend?",
+    "javascript backend?",
+    "node development?"
+  ],
+  "responses": [
+    "Yes, we use Node.js for building fast, scalable, and real-time backend applications using JavaScript."
+  ]
+  },
+  {
+  "tag": "database",
+  "patterns": [
+    "which database do you use?",
+    "database technologies?"
+  ],
+  "responses": [
+    "We work with databases like SQL Server, MySQL, and PostgreSQL to ensure reliable, efficient data management and use the appropriate one depending on project requirements."
+  ]
+  },
+  {
+  "tag": "sql",
+  "patterns": [
+    "sql?",
+    "do you use sql?",
+    "structured query language?",
+    "sql database?",
+    "what is sql?"
+  ],
+  "responses": [
+    "Yes, we use SQL (Structured Query Language) for managing and querying relational databases efficiently."
+  ]
+  },
+  {
+  "tag": "mysql",
+  "patterns": [
+    "mysql?",
+    "do you use mysql?",
+    "mysql database?",
+    "work with mysql?"
+  ],
+  "responses": [
+    "Yes, we use MySQL, a widely used open-source relational database, for building scalable and reliable applications."
+  ]
+  },
+  {
+  "tag": "sql_server",
+  "patterns": [
+    "sql server?",
+    "do you use sql server?",
+    "microsoft sql server?",
+    "sql server database?"
+  ],
+  "responses": [
+    "Yes, we use Microsoft SQL Server for enterprise-grade database solutions with strong performance, security, and integration capabilities."
+  ]
+  },
+  {
+  "tag": "postgresql",
+  "patterns": [
+    "postgresql?",
+    "do you use postgresql?",
+    "postgres database?",
+    "pg database?"
+  ],
+  "responses": [
+    "Yes, we use PostgreSQL, a powerful open-source relational database known for its advanced features and reliability."
+  ]
+  },
+  {
+  "tag": "mongodb",
+  "patterns": [
+    "mongodb?",
+    "do you use mongodb?",
+    "nosql database?",
+    "mongo database?"
+  ],
+  "responses": [
+    "Yes, we use MongoDB, a NoSQL database, for handling flexible and scalable data structures in modern applications."
+  ]
+  },
   {
     "tag": "it_consulting",
     "patterns": [
@@ -127,7 +385,7 @@
     "tag": "jobs",
     "patterns": [
       "job openings?", "careers?", "vacancies?",
-      "are you hiring?", "jobs in your company?",
+      "are you hiring interns?", "jobs in your company?",
       "open positions?", "apply for job?",
       "career opportunities?", "job roles?",
       "job vacancies?", "work with you?",
@@ -277,7 +535,7 @@
       "support contact?"
     ],
     "responses": [
-      "You can contact us via email or through our website contact form. We usually respond within 24 hours."
+        "You can contact us via email or through our website contact form. We usually respond within 24 hours. \n Our contact no :+91 8982373618,\n email : business@nimbad.com"
     ]
   },
 

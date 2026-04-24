@@ -87,7 +87,7 @@ class ChatbotModel:
 
         print("BM25 Score:", best_score)
 
-        THRESHOLD = 5.5
+        THRESHOLD = 5
 
         auto_suggestions = self.generate_suggestions(cleaned_input) or []
 
