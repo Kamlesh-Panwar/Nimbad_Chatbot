@@ -1,6 +1,6 @@
 document.getElementById("chat-toggle").onclick = function () {
     let chat = document.getElementById("chat-container");
-
+    const helpPrompt = document.getElementById("help-prompt");
     let isOpen = chat.style.display === "flex";
     chat.style.display = isOpen ? "none" : "flex";
 
@@ -17,6 +17,7 @@ document.getElementById("chat-toggle").onclick = function () {
             "Do you build websites?",
             "How can I contact you?"
         ]); 
+        helpPrompt.style.display = "none";
     }
 };
 document.getElementById("sendBtn").onclick = function(e) {
